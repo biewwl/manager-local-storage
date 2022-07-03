@@ -167,7 +167,7 @@ Isso salvará no localStorage uma chave chamada "*email*" com o valor "*teste@te
 
 2. **Vários**:
 
-Neste caso, o segundo parâmetro é necessariamente um **objeto**, contendo pelo menos duas chaves com seus respectivos valores, e o terceiro parâmetro não é utilizado.
+Neste caso, o segundo parâmetro é obrigatóriamente um **objeto**, contendo pelo menos duas chaves com seus respectivos valores, e o terceiro parâmetro não é utilizado.
 
 Exemplo:
 
@@ -178,7 +178,7 @@ lS('s', {
 });
 ```
 
-This will save 2 different keys to your localStorage. The first with the key "*nome*" and the value "*Gabriel*", and the second the key "*idade*" with the value *20*.
+Isso irá salvar 2 chaves diferentes no seu localStorage. a primeira com a chave "*nome*" e o valor "*Gabriel*", e a segunda com a chave "*idade*" e o valor *20*.
 
 ------------
 
@@ -188,7 +188,7 @@ A função *getItem* tem duas maneiras de ser executada:
 
 1. **Individual**:
 
-Nesse caso, o segundo parâmetro é uma **string** ou um **número** com a chave do localStorage que você deseja obter.
+Nesse caso, o segundo parâmetro é obrigatoriamente uma **string** ou um **número** sendo a chave do localStorage que você deseja obter.
 
 Exemplo:
 ```javascript
@@ -198,7 +198,7 @@ Isso retornará o valor da chave "*email*" armazenada em seu localStorage. Por e
 
 2. **Vários**:
 
-Nesse caso, o segundo parâmetro é um **array**, contendo pelo menos duas chaves.
+Nesse caso, o segundo parâmetro é obrigatoriamente um **array** contendo pelo menos duas chaves.
 
 Exemplo:
 
@@ -224,7 +224,7 @@ A função removeItem tem duas maneiras de ser executada:
 
 1. **Individual**:
 
-Nesse caso, o segundo parâmetro é uma **string** ou um **número** sendo a chave do localStorage que você deseja remover.
+Nesse caso, o segundo parâmetro é obrigatoriamente uma **string** ou um **número** sendo a chave do localStorage que você deseja remover.
 
 Example:
 
@@ -235,7 +235,7 @@ Isso removerá a chave "*email*" do seu localStorage.
 
 2. **Vários**:
 
-Nesse caso, o segundo parâmetro é um **array**, contendo pelo menos duas chaves.
+Nesse caso, o segundo parâmetro é obrigatoriamente um **array**, contendo pelo menos duas chaves.
 
 Exemplo:
 
