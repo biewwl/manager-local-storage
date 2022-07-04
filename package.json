@@ -1,6 +1,6 @@
 {
   "name": "manager-local-storage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple tool to manage localStorage!",
   "main": "localStorage.js",
   "scripts": {
