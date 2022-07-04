@@ -27,7 +27,7 @@ The *setItem* function has two ways to be executed:
 
 1. **Individual**:
 
-In this case, the second parameter, (the name of the key to save in localStorage) will be mandatory a **string** and the third parameter (the value to save in your key) will be mandatory.
+In this case, the second parameter, (the name of the key to save in localStorage) will be mandatory a **string** or a **number** and the third parameter (the value to save in your key) will be mandatory.
 
 Example:
 
@@ -156,7 +156,7 @@ A função *setItem* tem duas maneiras de ser executada:
 
 1. **Individual**:
 
-Neste caso, o segundo parâmetro (o nome da chave para salvar no localStorage) será obrigatoriamente uma **string** e o terceiro parâmetro (o valor a ser salvo em sua chave) será obrigatório.
+Neste caso, o segundo parâmetro (o nome da chave para salvar no localStorage) será obrigatoriamente uma **string** ou um **número** e o terceiro parâmetro (o valor a ser salvo em sua chave) será obrigatório.
 
 Exemplo:
 
