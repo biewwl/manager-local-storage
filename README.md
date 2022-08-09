@@ -3,47 +3,37 @@
 ## How it works?
 This function runs JSON.stringify every time it sets a new key in your localStorage, and runs JSON.parse every time it gets a key from localStorage. It also enables multiple operations with just one call. For example, you can get multiple keys from your localStorage, with just one line and without worrying about JSON.parse for each one.
 
+```javascript
+const lS = require('lS');
+```
+
 ------------
 
-*The "lS" function can receive 3 parameters:*
+*The lS object has 3 functions: set, get, remove:*
 
+### set:
 
-
-1.  **Method**: a string, which can be one of 3 options: "s", "g", "r".
-
-- The "s" option refers to **"localStorage.setItem"**.
-
-- Option "g" refers to **"localStorage.getItem"**.
-
-- The "r" option refers to **"localStorage.removeItem"**;
-
-2. **ListOrKey**: an array, an object or a string.
-
-3. **Value** (optional): is only used in individual setItem cases. It's the value you want to set in your localStorage.
-
-### setItem:
-
-The *setItem* function has two ways to be executed:
+The *set* function has two ways to be executed:
 
 1. **Individual**:
 
-In this case, the second parameter, (the name of the key to save in localStorage) will be mandatory a **string** or a **number** and the third parameter (the value to save in your key) will be mandatory.
+In this case, the name of the key to save in localStorage will be mandatory a **string** or a **number** and the the value to save in your key will be mandatory.
 
 Example:
 
 ```javascript
-lS('s', 'email', 'test@test.com');
+lS.set('email', 'test@test.com');
 ```
 This will save in localStorage a key called "*email*" with the value being "*test@test.com*".
 
 2. **Multiple**:
 
-In this case, the second parameter is necessarily an **object**, containing at least two keys with their respective values, and the third parameter is not used.
+In this case, the function must receive only an **object**, containing at least two keys with their respective values.
 
 Example:
 
 ```javascript
-lS('s', {
+lS.set({
 	name: 'Gabriel',
 	age: 20,
 });
@@ -53,29 +43,29 @@ This will save 2 different keys to your localStorage. The first with the key "*n
 
 ------------
 
-### getItem
+### get
 
-The *getItem* function has two ways to be executed:
+The *get* function has two ways to be executed:
 
 1. **Individual**:
 
-In this case, the second parameter is a **string** or a **number** with the key of the localStorage you want to get.
+In this case, the function must receive only a **string** or a **number** with the key of the localStorage you want to get.
 
 Example:
 
 ```javascript
-lS('g', 'email');
+lS.get('email');
 ```
 This will return the value of the "*email*" key stored in your localStorage. For example "*test@test.com*".
 
 2. **Multiple**:
 
-In this case, the second parameter is an **array**, containing at least two keys.
+In this case, the function must receive only an **array**, containing at least two keys.
 
 Example:
 
 ```javascript
-lS('g', ['name', 'age']);
+lS.get(['name', 'age']);
 ```
 
 This will return an **object** with at least two keys, each key being a key from the array you passed and their respective values.
@@ -90,29 +80,29 @@ Example:
 
 ------------
 
-### removeItem
+### remove
 
-The *removeItem* function has two ways to be executed:
+The *remove* function has two ways to be executed:
 
 1. **Individual**:
 
-In this case, the second parameter is a **string** or a **number** being the key of the localStorage you want to remove.
+In this case, the function must receive only a **string** or a **number** being the key of the localStorage you want to remove.
 
 Example:
 
 ```javascript
-lS('r', 'email');
+lS.remove('email');
 ```
 This will remove the "*email*" key from your localStorage.
 
 2. **Multiple**:
 
-In this case, the second parameter is an **array**, containing at least two keys.
+In this case, the function must receive only an **array**, containing at least two keys.
 
 Example:
 
 ```javascript
-lS('r', ['name', 'age']);
+lS.remove(['name', 'age']);
 ```
 
 This will remove the "*name*" and "*age*" keys from your localStorage.
@@ -134,45 +124,31 @@ Essa função executa JSON.stringify toda vez que for definir uma nova chave no 
 
 ------------
 
-*A função "lS" pode receber 3 parâmetros:*
+*O objeto lS possue 3 funções: set, get, remove:*
 
+### set:
 
-
-1. **Method**: uma string, que pode ser uma das 3 opções: "s", "g", "r".
-
-- A opção "s" refere-se a **"localStorage.setItem"**.
-
-- A opção "g" refere-se a **"localStorage.getItem"**.
-
-- A opção "r" refere-se a **"localStorage.removeItem"**;
-
-2. **ListOrKey**: um array, um objeto ou uma string.
-
-3. **Value** (opcional): é usado apenas em casos individuais de *setItem*. É o valor que você deseja definir em seu localStorage.
-
-### setItem:
-
-A função *setItem* tem duas maneiras de ser executada:
+A função *set* tem duas maneiras de ser executada:
 
 1. **Individual**:
 
-Neste caso, o segundo parâmetro (o nome da chave para salvar no localStorage) será obrigatoriamente uma **string** ou um **número** e o terceiro parâmetro (o valor a ser salvo em sua chave) será obrigatório.
+Neste caso, a função receberá o nome da chave para salvar no localStorage que será obrigatoriamente uma **string** ou um **número** e o valor a ser salvo em sua chave será obrigatório.
 
 Exemplo:
 
 ```javascript
-lS('s', 'email', 'teste@teste.com');
+lS.set('email', 'teste@teste.com');
 ```
 Isso salvará no localStorage uma chave chamada "*email*" com o valor "*teste@teste.com*".
 
 2. **Vários**:
 
-Neste caso, o segundo parâmetro é obrigatóriamente um **objeto**, contendo pelo menos duas chaves com seus respectivos valores, e o terceiro parâmetro não é utilizado.
+Neste caso, o primeiro parâmetro é obrigatóriamente um **objeto**, contendo pelo menos duas chaves com seus respectivos valores, e o segundo parâmetro não é utilizado.
 
 Exemplo:
 
 ```javascript
-lS('s', {
+lS.set({
 	nome: 'Gabriel',
 	idade: 20,
 });
@@ -182,28 +158,28 @@ Isso irá salvar 2 chaves diferentes no seu localStorage. a primeira com a chave
 
 ------------
 
-### getItem
+### get
 
-A função *getItem* tem duas maneiras de ser executada:
+A função *get* tem duas maneiras de ser executada:
 
 1. **Individual**:
 
-Nesse caso, o segundo parâmetro é obrigatoriamente uma **string** ou um **número** sendo a chave do localStorage que você deseja obter.
+Nesse caso, a função receberá obrigatoriamente uma **string** ou um **número** sendo a chave do localStorage que você deseja obter.
 
 Exemplo:
 ```javascript
-lS('g', 'email');
+lS.get('email');
 ```
 Isso retornará o valor da chave "*email*" armazenada em seu localStorage. Por exemplo "*teste@teste.com*".
 
 2. **Vários**:
 
-Nesse caso, o segundo parâmetro é obrigatoriamente um **array** contendo pelo menos duas chaves.
+Nesse caso, a função receberá obrigatoriamente um **array** contendo pelo menos duas chaves.
 
 Exemplo:
 
 ```javascript
-lS('g', ['name', 'age']);
+lS.get(['name', 'age']);
 ```
 
 Isso retornará um **objeto** com pelo menos duas chaves, sendo cada chave uma chave do array que você passou e seus respectivos valores.
@@ -218,29 +194,29 @@ Exemplo:
 
 ------------
 
-### removeItem
+### remove
 
-A função removeItem tem duas maneiras de ser executada:
+A função remove tem duas maneiras de ser executada:
 
 1. **Individual**:
 
-Nesse caso, o segundo parâmetro é obrigatoriamente uma **string** ou um **número** sendo a chave do localStorage que você deseja remover.
+Nesse caso, a função receberá obrigatoriamente uma **string** ou um **número** sendo a chave do localStorage que você deseja remover.
 
 Example:
 
 ```javascript
-lS('r', 'email');
+lS.remove('email');
 ```
 Isso removerá a chave "*email*" do seu localStorage.
 
 2. **Vários**:
 
-Nesse caso, o segundo parâmetro é obrigatoriamente um **array**, contendo pelo menos duas chaves.
+Nesse caso, a função receberá obrigatoriamente um **array**, contendo pelo menos duas chaves.
 
 Exemplo:
 
 ```javascript
-lS('r', ['nome', 'idade']);
+lS.remove(['nome', 'idade']);
 ```
 
 Isso removerá as chaves "*nome*" e "*idade*" do seu localStorage.
