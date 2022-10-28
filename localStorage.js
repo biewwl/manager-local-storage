@@ -1,4 +1,4 @@
-const lS = () => ({
+const lS = {
   set: (listOrKey, value) => {
     if (typeof listOrKey === "string" || typeof listOrKey === "number") {
       if (value === undefined) {
@@ -57,6 +57,6 @@ const lS = () => ({
       });
     }
   },
-});
+};
 
 module.exports = lS;
