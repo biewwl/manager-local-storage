@@ -4,6 +4,9 @@
   "design": false,
   "figma": "",
   "images": [
-    "https://raw.githubusercontent.com/biewwl/manager-local-storage/master/project-images/Cover.png"
+    "https://raw.githubusercontent.com/biewwl/manager-local-storage/master/project-images/Cover.png",
+    "https://raw.githubusercontent.com/biewwl/manager-local-storage/master/project-images/Comparative.png",
+    "https://raw.githubusercontent.com/biewwl/manager-local-storage/master/project-images/Without.png",
+    "https://raw.githubusercontent.com/biewwl/manager-local-storage/master/project-images/With.png"
   ]
 }
